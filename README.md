@@ -1,36 +1,16 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## ☘️ 인프런 이정환 강사님 Next.js 한입챌린지 5기 참가하면서 공부한 Repo
 
-## Getting Started
+- Page Router 학습 후 App Router 버전으로 다시 작성해보는 과정
 
-First, run the development server:
+> [Page Router 버전 repo](https://github.com/bitnalchan92/onebite_cinema)
+> 
+> [Page Router 버전 vercel 배포 페이지](https://onebite-cinema-lime.vercel.app/)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## ✏️ history
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 25/4/10
+1. 작성할 페이지들 App Router 적용 및 레이아웃 파일 추가
+    - /
+    - /search?q=
+    - /movie
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
