@@ -9,6 +9,7 @@ export default function MovieItem({
                                   } : MovieData) {
   return (
     <Link href={`/movie/${id}`} className={style.container}>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
       <img src={posterImgUrl} alt={title}/>
     </Link>
   )
