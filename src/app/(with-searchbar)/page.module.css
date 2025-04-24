@@ -40,3 +40,15 @@
     height: auto; /* 비율 유지 */
     border-radius: 5px; /* 선택적으로 모서리를 둥글게 */
 }
+
+.reco_movie_skeleton_container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.movie_skeleton_container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}

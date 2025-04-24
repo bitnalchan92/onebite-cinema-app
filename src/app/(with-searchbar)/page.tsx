@@ -1,8 +1,14 @@
 import style from "./page.module.css";
 import {MovieData} from "@/types";
 import MovieItem from "@/components/movie-item";
+import {delay} from "@/util/delay";
+import {Suspense} from "react";
+import RecoMovieListSkeleton from "@/components/skeleton/reco-movie-list-skeleton";
+import MovieListSkeleton from "@/components/skeleton/movie-list-skeleton";
 
 async function AllMovies() {
+  await delay(3000);
+
   const response = await fetch(
     `${process.env.NEXT_PUBLIC_API_SERVER_URL}/movie`,
     {cache: 'force-cache'} // 변경사항이 적고, 캐시된 데이터를 사용하는게 적절하다고 판단!
@@ -26,6 +32,8 @@ async function AllMovies() {
 }
 
 async function RecoMovies() {
+  await delay(1500);
+
   const response = await fetch(
     `${process.env.NEXT_PUBLIC_API_SERVER_URL}/movie/random`,
     {
@@ -56,11 +64,25 @@ export default function Home() {
     <div className={style.container}>
       <section>
         <h3>지금 가장 추천하는 영화</h3>
-        <RecoMovies/>
+        <Suspense fallback={
+          <div className={style.reco_movie_skeleton_container}>
+            <RecoMovieListSkeleton count={3}/>
+          </div>
+        }
+        >
+          <RecoMovies/>
+        </Suspense>
       </section>
       <section>
         <h3>등록된 모든 영화</h3>
-        <AllMovies/>
+        <Suspense fallback={
+          <div className={style.movie_skeleton_container}>
+            <MovieListSkeleton count={20}/>
+          </div>
+        }
+        >
+          <AllMovies/>
+        </Suspense>
       </section>
     </div>
   );

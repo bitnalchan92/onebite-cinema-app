@@ -1,0 +1,7 @@
+.img_container {
+    width: 112px;
+    height: 168px;
+    background-color: rgb(230, 230, 230);
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
