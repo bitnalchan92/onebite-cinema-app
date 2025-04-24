@@ -1,5 +1,7 @@
-import {MovieData} from "@/types";
+import {MovieData, ReviewData} from "@/types";
 import style from './page.module.css';
+import ReviewEditor from "@/components/review-editor";
+import ReviewItem from "@/components/review-item";
 
 export const dynamicParams = false; // 기본값이 true, false로 설정하게되면 아래 generateStaticParams()에 정의해둔 id값들이 아닌 경우 404가 return
 
@@ -29,9 +31,9 @@ export function generateStaticParams() {
   ]
 }
 
-export default async function Page({params}: { params: Promise<{ id: number }> }) {
+async function MovieDetail({movieId}: { movieId: string }) {
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_API_SERVER_URL}/movie/${(await params).id}`
+    `${process.env.NEXT_PUBLIC_API_SERVER_URL}/movie/${movieId}`
   )
 
   if (!response.ok) {
@@ -62,6 +64,36 @@ export default async function Page({params}: { params: Promise<{ id: number }> }
       <div>{company}</div>
       <div className={style.subTitle}>{subTitle}</div>
       <div className={style.description}>{description}</div>
+    </div>
+  )
+}
+
+async function ReviewList({movieId}: { movieId: string }) {
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_API_SERVER_URL}/review/movie/${movieId}`
+  )
+
+  if (!response.ok) {
+    throw new Error(`Review fetch failed : ${response.statusText}`);
+  }
+
+  const reviews: ReviewData[] = await response.json();
+
+  return (
+    <section>
+      {
+        reviews.map((review: ReviewData) => <ReviewItem key={`review-item-${review.id}`} {...review} />)
+      }
+    </section>
+  )
+}
+
+export default function Page({params}: { params: { id: string } }) {
+  return (
+    <div>
+      <MovieDetail movieId={params.id}/>
+      <ReviewEditor movieId={params.id}/>
+      <ReviewList movieId={params.id}/>
     </div>
   )
 }

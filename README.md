@@ -43,8 +43,12 @@
 
 - 검색어 입력 후 검색시 레이아웃을 제외한 페이지 컴포넌트에 Loading이 출력되도록
 
-### 컴포넌트별로 스트리밍 적용하기(with Suspense) & 에러핸들링 적용하기 [🚀]()
+### 컴포넌트별로 스트리밍 적용하기(with Suspense) & 에러핸들링 적용하기 [🚀](https://github.com/bitnalchan92/onebite-cinema-app/commit/cce9d5bbf0eb4317496b007b29bc3b95b8452ee8)
 
 - 인덱스 페이지의 추천영화 & 모든영화에 스트리밍 적용 ( + 스켈레톤 )
 - 서치페이지에 스트리밍 적용
 - error.tsx 추가
+
+### server action을 활용한 리뷰 조회 & 추가 기능 구현 [🚀]()
+
+- /movie/[id] 페이지에 리뷰 조회 및 추가 기능 구현하기
