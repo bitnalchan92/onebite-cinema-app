@@ -49,6 +49,12 @@
 - 서치페이지에 스트리밍 적용
 - error.tsx 추가
 
-### server action을 활용한 리뷰 조회 & 추가 기능 구현 [🚀]()
+### server action을 활용한 리뷰 조회 & 추가 기능 구현 [🚀](https://github.com/bitnalchan92/onebite-cinema-app/commit/13969aa10304f494351ac65c791f02018938cee5)
 
 - /movie/[id] 페이지에 리뷰 조회 및 추가 기능 구현하기
+
+### 리뷰 추가 기능 구현 & 리뷰 삭제 기능 구현 [🚀](https://github.com/bitnalchan92/onebite-cinema-app/commit/13969aa10304f494351ac65c791f02018938cee5)
+
+- 리뷰 추가 & 삭제시 로딩 상태를 관리할수 있도록 구현 (로딩UI가 렌더링 되도록)
+- 로딩중(진행중)에는 중복 제출(submit)을 방지
+- 새로고침 하지 않아도 등록된 리뷰를 볼수 있어야하고 삭제도 마찬가지

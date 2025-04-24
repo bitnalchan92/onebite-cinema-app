@@ -1,10 +1,13 @@
 import style from './review-item.module.css'
 import {ReviewData} from "@/types";
+import ReviewItemDeleteButton from "@/components/review-item-delete-button";
 
 export default function ReviewItem({
+                                     id,
                                      content,
                                      author,
                                      createdAt,
+                                     movieId
                                    }: ReviewData) {
   const formattedDate = new Intl.DateTimeFormat('ko-KR', {
     year: 'numeric',
@@ -19,7 +22,9 @@ export default function ReviewItem({
         <div className={style.date}>{formattedDate}일 작성됨</div>
       </div>
       <div className={style.content}>{content}</div>
-      <div className={style.delete_btn}>🗑️ 리뷰 삭제하기</div>
+      <div className={style.delete_btn}>
+        <ReviewItemDeleteButton reviewId={id} movieId={movieId}/>
+      </div>
     </div>
   )
 }

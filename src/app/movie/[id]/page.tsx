@@ -88,12 +88,12 @@ async function ReviewList({movieId}: { movieId: string }) {
   )
 }
 
-export default function Page({params}: { params: { id: string } }) {
+export default async function Page({params}: { params: Promise<{ id: string }> }) {
   return (
     <div>
-      <MovieDetail movieId={params.id}/>
-      <ReviewEditor movieId={params.id}/>
-      <ReviewList movieId={params.id}/>
+      <MovieDetail movieId={(await params).id}/>
+      <ReviewEditor movieId={(await params).id}/>
+      <ReviewList movieId={(await params).id}/>
     </div>
   )
 }
