@@ -33,7 +33,7 @@ async function Footer() {
   const movies: MovieData[] = await response.json();
 
   return (
-    <div>
+    <div style={{color: '#FFFFFF', paddingTop: '20px'}}>
       <footer>
         제작 @bitnalchan92
       </footer>

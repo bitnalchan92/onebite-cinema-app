@@ -32,9 +32,13 @@
 - fetch 함수 추가
 - 데이터 캐싱처리하기
 
-### 풀라우트 캐시 적용하기 [🚀]()
+### 풀라우트 캐시 적용하기 [🚀](https://github.com/bitnalchan92/onebite-cinema-app/commit/d126dac2106d1450bf007fdf9e862002455cbf0d)
 
 - search page를 제외하고 모든 페이지를 static page로 설정
 - 동적 경로를 갖는 movie page는 아래 내용 충족하도록 
   - 빌드 타임에 존재하는 모든 영화의 상세 페이지를 생성하도록...
   - 빌드 타임에 생성하지 못한 페이지에 대해서는 404를 return하도록...
+
+### search 페이지에 스트리밍 적용하기 [🚀]()
+
+- 검색어 입력 후 검색시 레이아웃을 제외한 페이지 컴포넌트에 Loading이 출력되도록
